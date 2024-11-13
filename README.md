@@ -58,28 +58,34 @@ Search up Remote Desktop Connection and proceed to log in with the dc-1 public I
 <p/>
   
 Username: labuser
+
+<p/>
+  
 Password: Cyberlab123!
 
 ![image](https://github.com/user-attachments/assets/a4640763-29a7-413d-a490-3a7f05df24c2)
 ![image](https://github.com/user-attachments/assets/3ac50b6a-cd1e-45d0-8e1a-3e2efa1ea265)
 
-Once logged in, go to the search bar, right click, click run, and type wr.msc to disable the firewall
+Once logged in, go to the search bar, right click, click run, and type wr.msc to disable the firewall.
 ![image](https://github.com/user-attachments/assets/218b5948-bb82-423c-b7c4-91c3ead8414b)
+<p/>
+  
+Make sure Domain Profile, Private Profile, and Public Profile's firewall state is turned "off".
 ![image](https://github.com/user-attachments/assets/973936cf-1d72-4050-a5fb-0b1681963a89)
 
 <p/>
 
-Head back to Azure to set Client-1's DNS settings to DC-1's Private IP address (You can find dc-1's private IP address in its properties)
+Head back to Azure to set Client-1's DNS settings to DC-1's Private IP address (You can find dc-1's private IP address in its properties).
 ![image](https://github.com/user-attachments/assets/d3ac8c21-5aa0-47f2-b982-0d8caf9be89b)
 
-Go to the main virtual machine page and restart Client-1
+Go to the main virtual machine page and restart Client-1.
 ![image](https://github.com/user-attachments/assets/02cab635-71e3-4007-9a9f-f94ab3ac5f92)
 
 
 Client-1 is now refreshed, so we'll be using Remote Desktop to log in to client-1 by using its IP address.
 <p/>
   
-With the use of Powershell, we'll be able to make sure the ping is successful between dc-1 and client-1
+With the use of Powershell, we'll be able to make sure the ping is successful between dc-1 and client-1.
 <p/>
   
 Run "ipconfig /all" = The output will result in being DC-1's private IP address (10.0.0.4)
@@ -127,22 +133,22 @@ Open up Active Directory Users and Computers (ADUC) in the search bar and create
 
 <p/>
   
-Right Click Mydomain.com > New > Organizational Unit > _EMPLOYEES
+Right Click Mydomain.com > New > Organizational Unit > "_EMPLOYEES".
 ![image](https://github.com/user-attachments/assets/a38a180e-e960-4418-8fcb-3d74b7de46c6)
 
 <p/>
 
-We'll add another Organizationl Unit, but we'll name it "_ADMINS"
+We'll add another Organizationl Unit, but we'll name it "_ADMINS".
 ![image](https://github.com/user-attachments/assets/ef40c804-956f-4002-bfb0-aa326c7ad7e9)
 
 <p/>
 
-Create a new employee named "Jane Doe" and use the same password with the username "jane_admin" and password "Cyberlab123!"
+Create a new employee named "Jane Doe" and use the same password with the username "jane_admin" and password "Cyberlab123!".
 ![image](https://github.com/user-attachments/assets/1984d443-00c0-4ede-9ba6-d42157f82e38)
 
 <p/>
 
-Proceed to add to Jane to the "Domain Admins" Security Group
+Proceed to add Jane to the "Domain Admins" Security Group.
 
 <p/>
   
@@ -151,7 +157,7 @@ Right click Jane > Properties > Member Of > "Domain Admins> Apply > Ok
 
 <p/> 
 
-Log out and close the connection to DC-1 and log back in using "mydomain.com/jane_admin" (will be the admin account we use)
+Log out and close the connection to DC-1 and log back in using "mydomain.com/jane_admin" (will be the admin account we use).
 
 <p/>
   
@@ -162,6 +168,7 @@ To join Client-1 to the domain (mydomain.com), login to Client-1 as a local admi
 ![image](https://github.com/user-attachments/assets/3d27a958-0600-4878-bbd4-e90db35c7b14)
 
 <p/>
+  
 Right click the start button and click System. Find Rename this PC (Advanced) > mydomain.com
 ![image](https://github.com/user-attachments/assets/a72816cb-dd5d-411a-8527-9838b282f18c)
 
@@ -185,7 +192,7 @@ To start setting up Remote Desktop for non-adminsistrative users on Client-1, lo
 
 <p/>
 
-Right click start > Settings > Remote Desktop > Allow "Domain Users" to access remote desktop.
+Right click start > Settings > Remote Desktop > User Accounts> Allow "Domain Users" to access remote desktop.
 ![image](https://github.com/user-attachments/assets/a361debd-a654-4ea1-a3e3-2ba462d3aaa5)
 
 <p/>
